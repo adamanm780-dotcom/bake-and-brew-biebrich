@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bake-brew-wiesbaden.vercel.app/sitemap.xml

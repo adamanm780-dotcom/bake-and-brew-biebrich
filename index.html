@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Bake & Brew Wiesbaden-Biebrich — Griechisches Café, Freddo & Matcha</title>
+  <meta name="description" content="Bake & Brew in Wiesbaden-Biebrich: authentisch griechisches Café mit Spezialitätenkaffee, Freddo Espresso, Iced Matcha Latte und frischem Gebäck. Stettiner Str. 10, täglich ab 5:30 Uhr." />
+  <meta name="keywords" content="Bake and Brew, Café Wiesbaden, Café Biebrich, Griechisches Café, Freddo Espresso, Iced Matcha Latte, Spezialitätenkaffee Wiesbaden, Frühstück Biebrich, Käsekuchen" />
+  <meta name="author" content="Bake & Brew" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://bake-brew-wiesbaden.vercel.app/" />
+  <meta name="theme-color" content="#2D8F97" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:site_name" content="Bake & Brew" />
+  <meta property="og:title" content="Bake & Brew Wiesbaden-Biebrich — Griechisches Café" />
+  <meta property="og:description" content="Authentisch griechisches Café in Wiesbaden-Biebrich. Freddo, Iced Matcha Latte & hausgemachter Käsekuchen. Stettiner Str. 10." />
+  <meta property="og:url" content="https://bake-brew-wiesbaden.vercel.app/" />
+  <meta property="og:image" content="https://bake-brew-wiesbaden.vercel.app/hero-bg.webp" />
+  <meta property="og:image:alt" content="Eiskalter Matcha Latte mit Bake & Brew Logo im Glas" />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bake & Brew Wiesbaden-Biebrich" />
+  <meta name="twitter:description" content="Ein kleines Stück Griechenland in Wiesbaden. Spezialitätenkaffee, Freddo, Matcha & frisches Gebäck." />
+  <meta name="twitter:image" content="https://bake-brew-wiesbaden.vercel.app/hero-bg.webp" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Bake & Brew",
+    "image": "https://bake-brew-wiesbaden.vercel.app/hero-bg.webp",
+    "url": "https://bake-brew-wiesbaden.vercel.app/",
+    "description": "Authentisch griechisches Café in Wiesbaden-Biebrich mit Spezialitätenkaffee, Freddo Espresso, Iced Matcha Latte und frischem Gebäck.",
+    "priceRange": "€",
+    "servesCuisine": ["Griechisch", "Café", "Frühstück"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Stettiner Str. 10",
+      "addressLocality": "Wiesbaden",
+      "addressRegion": "Hessen",
+      "postalCode": "65203",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.0471,
+      "longitude": 8.2167
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:30", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "16:00" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "ratingCount": "20"
+    }
+  }
+  </script>
+  <style>
+    html.is-loading, html.is-loading body { overflow: hidden; height: 100%; }
+    .loader {
+      position: fixed; inset: 0;
+      background: #2D8F97;
+      z-index: 9999;
+      display: grid; place-items: center;
+      opacity: 1;
+      transition: opacity .7s ease;
+    }
+    .loader.is-hidden { opacity: 0; pointer-events: none; }
+    .loader__inner {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 32px;
+      transform: translateY(0);
+    }
+    .loader img {
+      width: min(62vw, 420px);
+      height: auto;
+      display: block;
+      opacity: 0;
+      animation: loader-pop 900ms cubic-bezier(.2,.7,.2,1) forwards;
+    }
+    .loader__bar {
+      width: min(42vw, 220px);
+      height: 2px;
+      background: rgba(255,255,255,.2);
+      border-radius: 999px;
+      overflow: hidden;
+      opacity: 0;
+      animation: loader-fade 600ms ease 400ms forwards;
+    }
+    .loader__bar span {
+      display: block; height: 100%; width: 40%;
+      background: rgba(255,255,255,.95);
+      border-radius: inherit;
+      animation: loader-slide 1.4s cubic-bezier(.6,.1,.3,.9) infinite;
+    }
+    @keyframes loader-pop {
+      from { opacity: 0; transform: scale(.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes loader-fade { to { opacity: 1; } }
+    @keyframes loader-slide {
+      0%   { transform: translateX(-110%); }
+      60%  { transform: translateX(180%); }
+      100% { transform: translateX(180%); }
+    }
+  </style>
+  <script>document.documentElement.classList.add('is-loading');</script>
+  <link rel="preload" as="image" href="loading-logo.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="hero-bg.webp" imagesrcset="hero-bg-sm.webp 800w, hero-bg-md.webp 1200w, hero-bg.webp 2000w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <img src="loading-logo.webp" alt="Bake & Brew" width="560" height="560" />
+      <div class="loader__bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__wrap">
+      <a href="#top" class="brand" aria-label="Bake and Brew Startseite">
+        <span class="brand__mark brand__mark--img" aria-hidden="true">
+          <img src="logo.png" alt="" width="44" height="44" loading="eager" decoding="async" />
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Bake <span class="amp">&amp;</span> Brew</span>
+          <span class="brand__sub">Wiesbaden · Biebrich</span>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="Hauptnavigation">
+        <a href="#story">Über uns</a>
+        <a href="#menu">Karte</a>
+        <a href="#atmosphere">Atmosphäre</a>
+        <a href="#visit">Besuch</a>
+      </nav>
+      <a href="#visit" class="btn btn--ghost btn--nav">Vorbeikommen</a>
+      <button class="nav__toggle" aria-label="Menü öffnen" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile" id="mobileMenu" hidden>
+      <a href="#story">Über uns</a>
+      <a href="#menu">Karte</a>
+      <a href="#atmosphere">Atmosphäre</a>
+      <a href="#visit">Besuch</a>
+      <a href="#visit" class="btn btn--primary btn--sm">Vorbeikommen</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__backdrop" aria-hidden="true"></div>
+      <picture class="hero__bg">
+        <source srcset="hero-bg-sm.webp 800w, hero-bg-md.webp 1200w, hero-bg.webp 2000w" sizes="100vw" type="image/webp" />
+        <img src="hero-bg.jpg" alt="Eiskalter Matcha Latte von Bake & Brew in einem hohen Glas mit dem eingravierten Bake & Brew Logo und einem Bambus-Strohhalm, vor türkisblauem Hintergrund." width="2000" height="848" loading="eager" decoding="async" fetchpriority="high" />
+      </picture>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__wrap">
+        <div class="hero__head">
+          <h1 class="h1 h1--hero">
+            Erfrischender Genuss. <em>Eiskalter Matcha</em>, handgemacht.
+          </h1>
+          <p class="lede lede--hero">
+            Ein kleines Stück Griechenland in Wiesbaden-Biebrich.
+          </p>
+          <div class="cta-row cta-row--center">
+            <a href="#menu" class="btn btn--light btn--pill">
+              <span>Jetzt entdecken</span>
+            </a>
+          </div>
+        </div>
+        <a href="#story" class="hero__scroll" aria-label="Weiter scrollen">
+          <span></span>
+        </a>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Freddo Espresso</span><span>·</span>
+        <span>Iced Matcha Latte</span><span>·</span>
+        <span>Hausgemachter Käsekuchen</span><span>·</span>
+        <span>Griechische Spezialitäten</span><span>·</span>
+        <span>Flat White</span><span>·</span>
+        <span>Frappé</span><span>·</span>
+        <span>Freddo Espresso</span><span>·</span>
+        <span>Iced Matcha Latte</span><span>·</span>
+        <span>Hausgemachter Käsekuchen</span><span>·</span>
+        <span>Griechische Spezialitäten</span><span>·</span>
+        <span>Flat White</span><span>·</span>
+        <span>Frappé</span><span>·</span>
+      </div>
+    </div>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Unsere Werte">
+      <div class="container trust-strip__wrap">
+        <div class="trust-item reveal">
+          <span class="trust-item__ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><path d="M8 20c0-5 3.5-10 8-10s8 5 8 10M6 20h20M10 26h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 6v3M13 5l1 2M19 5l-1 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h3>Täglich frisch gebacken</h3>
+            <p>Ab 5:30 Uhr aus dem Ofen — nach griechischer Familientradition.</p>
+          </div>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-item__ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 4l2.5 6.5L25 12l-5 4.5L21 24l-5-3-5 3 1-7.5L7 12l6.5-1.5L16 4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Premium-Zutaten</h3>
+            <p>Specialty-Coffee, echter Matcha, handverlesene Rohstoffe.</p>
+          </div>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-item__ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 27s-10-7-10-15a6 6 0 0 1 10-4 6 6 0 0 1 10 4c0 8-10 15-10 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Mit viel Liebe</h3>
+            <p>Jeder Shot, jedes Stück — mit Ruhe und Charakter zubereitet.</p>
+          </div>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-item__ico" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><path d="M8 14h14a3 3 0 0 1 0 6h-1M8 14v7a5 5 0 0 0 5 5h4a5 5 0 0 0 5-5M12 6v4M16 6v4M20 6v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h3>Specialty Coffee</h3>
+            <p>Freddo, Flat White &amp; Signature Brews — in Biebrich längst Klassiker.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BESTSELLERS -->
+    <section class="section section--bestsellers" id="bestsellers">
+      <div class="container">
+        <header class="sec-head reveal sec-head--row">
+          <div>
+            <span class="eyebrow eyebrow--dark"><span class="dot"></span> Gästeliebling</span>
+            <h2 class="h2">Unsere Bestseller</h2>
+          </div>
+          <a class="sec-link" href="#menu">
+            <span>Ganze Karte ansehen</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </header>
+
+        <div class="product-grid">
+          <article class="product-card reveal" data-accent="matcha">
+            <div class="product-card__media" aria-hidden="true">
+              <div class="product-card__glow"></div>
+              <svg class="product-card__art" viewBox="0 0 180 180" width="180" height="180">
+                <defs>
+                  <linearGradient id="pc-matcha" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#E9F5DD"/><stop offset=".55" stop-color="#9CB784"/><stop offset="1" stop-color="#5E7F46"/>
+                  </linearGradient>
+                </defs>
+                <rect x="56" y="30" width="68" height="120" rx="10" fill="none" stroke="#FFFFFFCC" stroke-width="2"/>
+                <rect x="60" y="58" width="60" height="88" rx="7" fill="url(#pc-matcha)"/>
+                <rect x="60" y="34" width="60" height="24" rx="5" fill="#FFFFFFE6"/>
+                <path d="M108 24c4 8 4 14 0 22" stroke="#C8A76A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                <circle cx="70" cy="74" r="3" fill="#FFFFFF88"/>
+                <circle cx="100" cy="104" r="2" fill="#FFFFFF66"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Signature</span>
+              <h3>Iced Matcha Latte</h3>
+              <p>Ceremonial Matcha, eisgekühlt und samtig-mild. Ein Gästeliebling.</p>
+              <div class="product-card__meta">
+                <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+                <span class="price">4,50€</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-accent="coffee">
+            <div class="product-card__media" aria-hidden="true">
+              <div class="product-card__glow"></div>
+              <svg class="product-card__art" viewBox="0 0 180 180" width="180" height="180">
+                <defs>
+                  <linearGradient id="pc-freddo" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#EFE4D2"/><stop offset=".4" stop-color="#6B4A2E"/><stop offset="1" stop-color="#2A1810"/>
+                  </linearGradient>
+                </defs>
+                <path d="M60 40h60l-4 110a10 10 0 0 1-10 9H74a10 10 0 0 1-10-9L60 40z" fill="none" stroke="#FFFFFFCC" stroke-width="2"/>
+                <path d="M64 64h52l-3 85a8 8 0 0 1-8 7H75a8 8 0 0 1-8-7L64 64z" fill="url(#pc-freddo)"/>
+                <ellipse cx="90" cy="72" rx="24" ry="5" fill="#EFE4D2BB"/>
+                <path d="M82 30q8 -10 16 0" stroke="#FFFFFFAA" stroke-width="3" stroke-linecap="round" fill="none"/>
+                <path d="M86 22q6 -10 12 0" stroke="#FFFFFF88" stroke-width="3" stroke-linecap="round" fill="none"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Klassiker</span>
+              <h3>Freddo Espresso</h3>
+              <p>Eisgekühlter Doppel-Espresso, in Biebrich längst Tradition.</p>
+              <div class="product-card__meta">
+                <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+                <span class="price">3,80€</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-accent="cream">
+            <div class="product-card__media" aria-hidden="true">
+              <div class="product-card__glow"></div>
+              <svg class="product-card__art" viewBox="0 0 180 180" width="180" height="180">
+                <defs>
+                  <linearGradient id="pc-cake" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#FFF7E5"/><stop offset=".6" stop-color="#F0D7A0"/><stop offset="1" stop-color="#C8A76A"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="90" cy="140" rx="58" ry="8" fill="#00000015"/>
+                <path d="M38 86c0-10 23-18 52-18s52 8 52 18v40c0 10-23 18-52 18s-52-8-52-18V86z" fill="url(#pc-cake)" stroke="#FFFFFFCC" stroke-width="2"/>
+                <path d="M38 86c0 10 23 18 52 18s52-8 52-18" fill="none" stroke="#FFFFFFCC" stroke-width="2"/>
+                <path d="M62 80q8-22 22-22 10 0 4 18" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="80" cy="100" r="2" fill="#8B6F3C"/>
+                <circle cx="108" cy="108" r="2" fill="#8B6F3C"/>
+                <circle cx="94" cy="120" r="2" fill="#8B6F3C"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Highlight</span>
+              <h3>Hausgem. Käsekuchen</h3>
+              <p>Cremig, frisch, mit griechischem Akzent — ein Gästeliebling.</p>
+              <div class="product-card__meta">
+                <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+                <span class="price">3,90€</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-accent="pastry">
+            <div class="product-card__media" aria-hidden="true">
+              <div class="product-card__glow"></div>
+              <svg class="product-card__art" viewBox="0 0 180 180" width="180" height="180">
+                <defs>
+                  <linearGradient id="pc-pastry" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#FFE9B3"/><stop offset=".55" stop-color="#D99A4C"/><stop offset="1" stop-color="#8B5524"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="90" cy="145" rx="60" ry="8" fill="#00000015"/>
+                <path d="M30 120c0-30 27-52 60-52s60 22 60 52" fill="url(#pc-pastry)" stroke="#FFFFFFCC" stroke-width="2"/>
+                <path d="M44 118c6-18 20-32 46-32s40 14 46 32" fill="none" stroke="#FFFFFFAA" stroke-width="1.5"/>
+                <path d="M62 110c4-14 14-24 28-24s24 10 28 24" fill="none" stroke="#FFFFFFAA" stroke-width="1.5"/>
+                <path d="M30 120h120v10H30z" fill="#FFFFFF22"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Frisch aus dem Ofen</span>
+              <h3>Spanakopita</h3>
+              <p>Goldbraunes Blätterteiggebäck mit Spinat und Feta — handgerollt.</p>
+              <div class="product-card__meta">
+                <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+                <span class="price">3,50€</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card reveal" data-accent="coffee2">
+            <div class="product-card__media" aria-hidden="true">
+              <div class="product-card__glow"></div>
+              <svg class="product-card__art" viewBox="0 0 180 180" width="180" height="180">
+                <defs>
+                  <linearGradient id="pc-cap" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#F7EAD0"/><stop offset=".55" stop-color="#B78A5A"/><stop offset="1" stop-color="#4E2F1A"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="90" cy="145" rx="58" ry="8" fill="#00000015"/>
+                <path d="M52 70h76a0 0 0 0 1 0 0v36a38 38 0 0 1-38 38 38 38 0 0 1-38-38V70z" fill="url(#pc-cap)" stroke="#FFFFFFCC" stroke-width="2"/>
+                <path d="M128 82h8a12 12 0 0 1 0 24h-8" fill="none" stroke="#FFFFFFCC" stroke-width="2"/>
+                <ellipse cx="90" cy="72" rx="38" ry="6" fill="#FFF7E5"/>
+                <path d="M76 62q14-14 28 0" stroke="#FFFFFFCC" stroke-width="2" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Beliebt</span>
+              <h3>Freddo Cappuccino</h3>
+              <p>Cremiger Milchschaum auf eisgekühltem Espresso. Seidig, frisch.</p>
+              <div class="product-card__meta">
+                <span class="stars" aria-label="5 von 5 Sternen">★★★★★</span>
+                <span class="price">4,20€</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP BY CATEGORY -->
+    <section class="section section--cream" id="categories">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Sortiment entdecken</span>
+          <h2 class="h2">Shop by Category</h2>
+          <p class="body body--center">Von Specialty Coffee über griechisches Gebäck bis zu eisigen Signature-Drinks — alles frisch, alles ehrlich.</p>
+        </header>
+
+        <div class="cat-grid">
+          <a class="cat-card reveal" href="#menu">
+            <span class="cat-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="30" height="30"><path d="M8 16h22a5 5 0 0 1 0 10h-1M8 16v9a7 7 0 0 0 7 7h6a7 7 0 0 0 7-7M14 6v4M20 6v4M26 6v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Kaffee</h3>
+            <p>Espresso, Cappuccino, Flat White &amp; Mokka</p>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="cat-card reveal" href="#menu">
+            <span class="cat-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="30" height="30"><path d="M12 8h16l-2 24a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4L12 8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 14h16M20 4v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Kalte Spezialitäten</h3>
+            <p>Freddo, Frappé &amp; Iced Matcha Latte</p>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="cat-card reveal" href="#menu">
+            <span class="cat-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="30" height="30"><path d="M8 24c0-8 5-14 12-14s12 6 12 14M6 24h28M10 32h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Süßes Gebäck</h3>
+            <p>Käsekuchen, Baklava &amp; Loukoumades</p>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="cat-card reveal" href="#menu">
+            <span class="cat-card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="30" height="30"><path d="M8 22c0-8 5-14 12-14s12 6 12 14v4H8v-4z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 22c0-5 3-8 6-8s6 3 6 8M20 26v6M14 32h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Herzhaft</h3>
+            <p>Spanakopita, Tiropita &amp; Käsestücke</p>
+            <span class="cat-card__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL SPLIT -->
+    <section class="section section--split" id="oven">
+      <div class="container split">
+        <div class="split__copy reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Aus unserer Küche</span>
+          <h2 class="h2">Vom Ofen<br/>direkt auf deinen Tisch.</h2>
+          <p class="body">
+            Bei uns beginnt der Tag früh: Ab 5:30 Uhr steht der Teig, das Wasser sprudelt,
+            der erste Espresso läuft. Alles, was du hier bekommst, ist an diesem Morgen entstanden —
+            aus griechischer Familientradition und mit Zutaten, die ihren Namen verdienen.
+          </p>
+          <ul class="split__points">
+            <li><span class="tick" aria-hidden="true">✓</span> Täglich frisch — nie vom Vortag</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Ceremonial-Grade Matcha &amp; Specialty Coffee</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Hausgemacht, in kleinen Chargen</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Vegetarisch-freundliche Auswahl</li>
+          </ul>
+          <div class="cta-row">
+            <a href="#visit" class="btn btn--primary"><span>Vorbeikommen</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="split__media reveal">
+          <div class="split__collage">
+            <figure class="collage-card collage-card--a">
+              <div class="collage-card__art collage-art--bread" aria-hidden="true">
+                <svg viewBox="0 0 200 160" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs><linearGradient id="cg-bread" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFEFCF"/><stop offset=".6" stop-color="#D99A4C"/><stop offset="1" stop-color="#6B3F1C"/></linearGradient></defs>
+                  <rect width="200" height="160" fill="#F5E6C8"/>
+                  <ellipse cx="100" cy="145" rx="80" ry="8" fill="#00000015"/>
+                  <path d="M30 110c0-35 30-60 70-60s70 25 70 60v20H30v-20z" fill="url(#cg-bread)" stroke="#FFFFFFCC" stroke-width="1.5"/>
+                  <path d="M50 96c8-16 22-26 50-26s42 10 50 26" fill="none" stroke="#FFFFFFBB" stroke-width="1.5"/>
+                  <path d="M70 84c6-10 16-18 30-18s24 8 30 18" fill="none" stroke="#FFFFFF99" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <figcaption>Täglich ab 5:30 Uhr im Ofen</figcaption>
+            </figure>
+            <figure class="collage-card collage-card--b">
+              <div class="collage-card__art collage-art--drink" aria-hidden="true">
+                <svg viewBox="0 0 200 200" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs><linearGradient id="cg-drink" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#E9F5DD"/><stop offset=".45" stop-color="#7A9C5F"/><stop offset="1" stop-color="#3E6528"/></linearGradient></defs>
+                  <rect width="200" height="200" fill="#DDEEEC"/>
+                  <rect x="70" y="30" width="60" height="150" rx="8" fill="none" stroke="#FFFFFFCC" stroke-width="2"/>
+                  <rect x="73" y="58" width="54" height="118" rx="6" fill="url(#cg-drink)"/>
+                  <rect x="73" y="34" width="54" height="26" rx="5" fill="#FFFFFFE6"/>
+                  <path d="M118 22c5 9 5 16 0 26" stroke="#C8A76A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <figcaption>Signature Iced Matcha Latte</figcaption>
+            </figure>
+            <div class="collage-badge">
+              <strong>5,0</strong>
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span>Google Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section" id="story">
+      <div class="container two-col">
+        <div class="two-col__copy reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Über Bake <span class="amp">&amp;</span> Brew</span>
+          <h2 class="h2">Ein neues, authentisch griechisches Café — in Biebrich zuhause.</h2>
+          <p class="body">
+            Bake <span class="amp">&amp;</span> Brew ist eine echte Bereicherung für Wiesbaden-Biebrich: ein helles,
+            einladendes Café, in dem Spezialitätenkaffee, frisches Gebäck und eine warme Gastfreundschaft
+            zusammenkommen. Man kommt als Gast — und fühlt sich wie eingeladen.
+          </p>
+          <p class="body">
+            Die Inhaber werden von unseren Gästen als besonders herzlich beschrieben. Genau dieses
+            Gefühl — „ein kleines Stück Griechenland in Wiesbaden" — ist das, wofür wir stehen.
+          </p>
+          <div class="quote reveal">
+            <svg viewBox="0 0 40 30" width="36" height="28" aria-hidden="true"><path d="M0 30V18C0 9 6 3 14 0v6c-4 2-6 6-6 10h6v14H0zm22 0V18C22 9 28 3 36 0v6c-4 2-6 6-6 10h6v14H22z" fill="currentColor"/></svg>
+            <p>Essen, Service und Atmosphäre — durchweg 5 von 5. Eine echte Bereicherung für Biebrich.</p>
+            <cite>— Stimmen aus den Google-Bewertungen</cite>
+          </div>
+        </div>
+        <aside class="stats reveal">
+          <div class="stat">
+            <span class="stat__num">5<small>,0</small></span>
+            <span class="stat__label">Sterne im Durchschnitt</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">1–10<small>€</small></span>
+            <span class="stat__label">Faires Preisniveau</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">5:30</span>
+            <span class="stat__label">Uhr — frisch für dich gebacken</span>
+          </div>
+          <div class="stat stat--accent">
+            <span class="stat__ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 2v4M8 4v4M16 4v4M6 10h12l-1 10a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L6 10z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="stat__label stat__label--big">Hausgemachter Käsekuchen<br/>— ein Gästeliebling.</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CRAFTED WITH CARE -->
+    <section class="section section--craft" id="craft">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Unser Handwerk</span>
+          <h2 class="h2">Crafted with Care.</h2>
+          <p class="body body--center">Fünf Dinge, auf die wir bei jedem Teig, jedem Shot, jedem Lächeln achten — jeden Tag aufs Neue.</p>
+        </header>
+        <div class="craft-grid">
+          <div class="craft-item reveal">
+            <span class="craft-item__num">01</span>
+            <span class="craft-item__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="28" height="28"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 10v10l6 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Täglich frisch</h3>
+            <p>Teige werden über Nacht angesetzt, Gebäck kommt morgens frisch aus dem Ofen.</p>
+          </div>
+          <div class="craft-item reveal">
+            <span class="craft-item__num">02</span>
+            <span class="craft-item__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="28" height="28"><path d="M20 6l3 8 8 1-6 6 2 9-7-4-7 4 2-9-6-6 8-1 3-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Premium-Zutaten</h3>
+            <p>Specialty-Coffee, ceremonial Matcha, regionale Milch — nichts Künstliches.</p>
+          </div>
+          <div class="craft-item reveal">
+            <span class="craft-item__num">03</span>
+            <span class="craft-item__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="28" height="28"><path d="M8 20a6 6 0 0 1 6-6h12a6 6 0 0 1 0 12h-1M8 20v4a8 8 0 0 0 8 8h6a8 8 0 0 0 8-8M14 12V8M20 12V8M26 12V8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Specialty Brewing</h3>
+            <p>Jeder Shot getimt, jede Extraktion kontrolliert — Freddo wie in Athen.</p>
+          </div>
+          <div class="craft-item reveal">
+            <span class="craft-item__num">04</span>
+            <span class="craft-item__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="28" height="28"><path d="M20 34s-12-8-12-18a8 8 0 0 1 12-4 8 8 0 0 1 12 4c0 10-12 18-12 18z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Mit viel Herz</h3>
+            <p>Griechische Gastfreundschaft — man kommt als Gast und geht als Stammgast.</p>
+          </div>
+          <div class="craft-item reveal">
+            <span class="craft-item__num">05</span>
+            <span class="craft-item__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="28" height="28"><path d="M8 20c0-4 2-8 6-8m4-4c2-2 6-2 8 0m4 4c4 0 6 4 6 8M6 26h28M10 32h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Lokal &amp; frisch</h3>
+            <p>Direkt in Wiesbaden-Biebrich — Zutaten aus der Region, wo es möglich ist.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section section--cream" id="menu">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Unsere Karte</span>
+          <h2 class="h2">Kaffee, der man schmeckt. Gebäck, das wärmt.</h2>
+          <p class="body body--center">
+            Spezialitätenkaffee mit Charakter, frisch gebackene griechische Süß- und Herzhaft-Leckereien —
+            und ein Freddo, der längst Klassiker in Biebrich ist.
+          </p>
+        </header>
+
+        <div class="menu-pin" id="menuPin">
+          <div class="menu-pin__stage">
+            <div class="menu-pin__caption">
+              <span class="eyebrow eyebrow--dark"><span class="dot"></span> Handgegossen</span>
+              <h3 class="menu-pin__title">Frisch. Mit Ruhe.<br/>Für dich gemacht.</h3>
+              <p>Scrolle weiter und schau zu.</p>
+            </div>
+            <div class="menu-video__frame" aria-hidden="true">
+              <canvas id="menuCanvas" width="540" height="960"></canvas>
+            </div>
+            <div class="menu-pin__progress" aria-hidden="true">
+              <span id="menuPinBar"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-grid">
+            <article class="menu-card reveal">
+              <div class="menu-card__head">
+                <span class="menu-card__ico" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="24" height="24"><path d="M6 12h16a4 4 0 0 1 0 8h-1M6 12v8a6 6 0 0 0 6 6h4a6 6 0 0 0 6-6M10 4v4M14 4v4M18 4v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Kaffee <span class="amp">&amp;</span> Heißgetränke</h3>
+              </div>
+              <ul>
+                <li><span>Espresso</span><span class="dotline"></span></li>
+                <li><span>Cappuccino</span><span class="dotline"></span></li>
+                <li><span>Latte Macchiato</span><span class="dotline"></span></li>
+                <li><span>Flat White</span><span class="dotline"></span></li>
+                <li><span>Tasse Kaffee</span><span class="dotline"></span></li>
+                <li><span>Mokka</span><span class="dotline"></span></li>
+                <li><span>Tee</span><span class="dotline"></span></li>
+              </ul>
+            </article>
+
+            <article class="menu-card menu-card--highlight reveal">
+              <span class="badge">Signature</span>
+              <div class="menu-card__head">
+                <span class="menu-card__ico" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="24" height="24"><path d="M10 6h12l-1 18a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3L10 6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M10 12h12M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Kalte Kaffeespezialitäten</h3>
+              </div>
+              <ul>
+                <li class="is-hero"><span>Freddo Espresso</span><span class="dotline"></span><em>Klassiker</em></li>
+                <li class="is-hero"><span>Freddo Cappuccino</span><span class="dotline"></span><em>Beliebt</em></li>
+                <li><span>Frappé</span><span class="dotline"></span></li>
+                <li class="is-hero"><span>Iced Matcha Latte</span><span class="dotline"></span><em>Gelobt</em></li>
+              </ul>
+              <p class="menu-card__note">Der Freddo ist in Biebrich längst Tradition — gelobt für seine exzellente Qualität.</p>
+            </article>
+
+            <article class="menu-card reveal">
+              <div class="menu-card__head">
+                <span class="menu-card__ico" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" width="24" height="24"><path d="M6 20a6 6 0 0 1 12 0M4 20h20M10 14v-2a3 3 0 0 1 3-3M15 14v-2a3 3 0 0 1 3-3M5 26h18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <h3>Gebäck <span class="amp">&amp;</span> Süßes</h3>
+              </div>
+              <ul>
+                <li><span>Hausgemachter Käsekuchen</span><span class="dotline"></span><em>Highlight</em></li>
+                <li><span>Kleines Käsestück</span><span class="dotline"></span></li>
+                <li><span>Griechische Süßspezialitäten</span><span class="dotline"></span></li>
+                <li><span>Herzhafte Leckereien</span><span class="dotline"></span></li>
+                <li><span>Frisch — täglich ab 5:30</span><span class="dotline"></span></li>
+              </ul>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATMOSPHERE -->
+    <section class="section" id="atmosphere">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Atmosphäre</span>
+          <h2 class="h2">Hell, modern, ruhig — und spürbar herzlich.</h2>
+        </header>
+        <div class="features">
+          <div class="feature reveal">
+            <span class="feature__ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26"><circle cx="16" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 2v3M16 27v3M2 16h3M27 16h3M6 6l2 2M24 24l2 2M26 6l-2 2M8 24l-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Hell <span class="amp">&amp;</span> einladend</h3>
+            <p>Modernes Interieur mit warmem Licht — Innenbereich und Tresenplätze laden zum Verweilen ein.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26"><path d="M6 14a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v8H6v-8zM10 22v3M22 22v3M12 10V6M20 10V6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Ruhig für gute Gespräche</h3>
+            <p>Kein Gedränge, keine Wartezeit — perfekt für zwei, drei, vier. Rauchfrei und kinderfreundlich.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26"><path d="M16 28s-10-7-10-15a6 6 0 0 1 10-4 6 6 0 0 1 10 4c0 8-10 15-10 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Herzliche Gastfreundschaft</h3>
+            <p>Die Inhaber machen den Unterschied — man fühlt sich sofort willkommen, fast wie zu Hause.</p>
+          </div>
+          <div class="feature reveal">
+            <span class="feature__ico" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26"><path d="M10 22c0-5 2-10 6-10s6 5 6 10M10 22h12M8 22v2h16v-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Vegetarisch-freundlich</h3>
+            <p>Große Auswahl an süß und herzhaft — von Gästen ausdrücklich empfohlen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section--testimonials" id="reviews">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Stimmen aus Biebrich</span>
+          <h2 class="h2">Was unsere Gäste sagen.</h2>
+          <div class="rating-summary">
+            <span class="rating-summary__num">5,0</span>
+            <span class="stars rating-summary__stars" aria-hidden="true">★★★★★</span>
+            <span class="rating-summary__meta">basierend auf Google-Bewertungen</span>
+          </div>
+        </header>
+        <div class="testi-grid">
+          <figure class="testi reveal">
+            <span class="testi__quote" aria-hidden="true">&ldquo;</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <blockquote>
+              Endlich ein Café, das in Biebrich <em>wirklich</em> fehlt. Der Freddo ist exzellent,
+              der Käsekuchen hausgemacht — und die Inhaber so herzlich, dass man sofort wieder kommen will.
+            </blockquote>
+            <figcaption>
+              <span class="testi__avatar" aria-hidden="true">AK</span>
+              <span>
+                <strong>Anna K.</strong>
+                <span class="testi__meta">Stammgast · Wiesbaden</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="testi testi--featured reveal">
+            <span class="testi__quote" aria-hidden="true">&ldquo;</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <blockquote>
+              Ein kleines Stück Griechenland in Wiesbaden. Hell, ruhig, einladend —
+              man fühlt sich sofort willkommen. Essen, Service und Atmosphäre: durchweg 5 von 5.
+            </blockquote>
+            <figcaption>
+              <span class="testi__avatar" aria-hidden="true">DM</span>
+              <span>
+                <strong>Dimitris M.</strong>
+                <span class="testi__meta">Google Local Guide</span>
+              </span>
+            </figcaption>
+          </figure>
+          <figure class="testi reveal">
+            <span class="testi__quote" aria-hidden="true">&ldquo;</span>
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <blockquote>
+              Iced Matcha Latte ist mein neuer Morgen-Ritual. Dazu ein Spanakopita —
+              perfekt. Große Auswahl, faire Preise, rauchfrei &amp; kinderfreundlich. Sehr zu empfehlen.
+            </blockquote>
+            <figcaption>
+              <span class="testi__avatar" aria-hidden="true">SL</span>
+              <span>
+                <strong>Sarah L.</strong>
+                <span class="testi__meta">aus Biebrich</span>
+              </span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section section--newsletter" id="newsletter">
+      <div class="container">
+        <div class="news-card reveal">
+          <div class="news-card__bg" aria-hidden="true"></div>
+          <div class="news-card__content">
+            <div>
+              <span class="eyebrow eyebrow--light"><span class="dot"></span> Stay in the loop</span>
+              <h2 class="h2 h2--light">Neue Drinks, saisonales Gebäck —<br/>direkt in dein Postfach.</h2>
+              <p class="body body--light">Keine Spam-Mails. Nur Neuigkeiten, Specials und kleine Geschichten aus unserer Küche.</p>
+            </div>
+            <form class="news-form" onsubmit="event.preventDefault(); this.querySelector('.news-form__msg').hidden = false; this.querySelector('input').value = '';" aria-label="Newsletter-Anmeldung">
+              <label class="visually-hidden" for="email">E-Mail</label>
+              <input id="email" type="email" required placeholder="deine@email.de" autocomplete="email" />
+              <button type="submit" class="btn btn--primary btn--lg">
+                <span>Abonnieren</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <p class="news-form__msg" hidden>Danke — wir melden uns bald!</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--faq" id="faq">
+      <div class="container faq">
+        <div class="faq__head reveal">
+          <span class="eyebrow eyebrow--dark"><span class="dot"></span> Häufige Fragen</span>
+          <h2 class="h2">Gut zu wissen,<br/>bevor du vorbeikommst.</h2>
+          <p class="body">Du hast eine andere Frage? Ruf uns gerne an oder schau einfach vorbei — wir freuen uns.</p>
+        </div>
+        <div class="faq__list reveal">
+          <details class="faq-item" open>
+            <summary>
+              <span>Wann habt ihr geöffnet?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Montag bis Freitag ab <strong>5:30 Uhr</strong>, samstags und sonntags ab 7:00 Uhr. Geschlossen ist täglich um 18:00 Uhr (sonntags 16:00 Uhr).</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Muss ich reservieren?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Nein. Komm einfach spontan vorbei — in der Regel gibt es keine Wartezeit. Für Gruppen ab 4–5 Personen ist eine kurze Rückmeldung aber willkommen.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Gibt es vegetarische Optionen?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Absolut. Von griechischem Käsegebäck über Süßspezialitäten bis hin zu unseren Signature-Drinks: ein Großteil der Karte ist vegetarisch-freundlich.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Wie ist die Parksituation?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Parken in der Stettiner Str. und Umgebung kann etwas Geduld brauchen. Plan gern zwei Minuten für die Parkplatzsuche ein — dein Kaffee wartet bis dahin.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Kann ich Gebäck vorbestellen?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Ja. Für größere Mengen, Käsekuchen oder Catering ruf uns am besten einen Tag vorher an — wir backen dann extra für dich.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Seid ihr kinderfreundlich?</span>
+              <span class="faq-item__ico" aria-hidden="true">
+                <svg viewBox="0 0 16 16" width="14" height="14"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="faq-item__body">
+              <p>Sehr. Unser Café ist rauchfrei, ruhig und von Gästen ausdrücklich als kinderfreundlich gelobt. Süßes Gebäck gibt es auch in kleinen Portionen.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT / CONTACT -->
+    <section class="section section--dark" id="visit">
+      <div class="container visit">
+        <div class="visit__copy reveal">
+          <span class="eyebrow eyebrow--light"><span class="dot"></span> Besuch einplanen</span>
+          <h2 class="h2 h2--light">Komm vorbei —<br/>wir freuen uns auf dich.</h2>
+          <p class="body body--light">
+            Stettiner Str. 10, 65203 Wiesbaden. Montag bis Freitag bereits ab 5:30 Uhr.
+            Parken kann etwas Geduld brauchen — dein Kaffee wartet dafür schon.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--primary btn--light" href="https://www.google.com/maps/search/?api=1&query=Stettiner+Str.+10,+65203+Wiesbaden" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span>In Google Maps öffnen</span>
+            </a>
+            <a class="btn btn--ghost btn--ghost-light" href="tel:+49">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              <span>Anrufen</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="visit__grid">
+          <article class="info reveal">
+            <h3>Adresse</h3>
+            <p>Stettiner Str. 10<br/>65203 Wiesbaden · Biebrich</p>
+          </article>
+          <article class="info reveal">
+            <h3>Öffnungszeiten</h3>
+            <ul class="hours">
+              <li><span>Montag</span><span>05:30 – 18:00</span></li>
+              <li><span>Dienstag</span><span>05:30 – 18:00</span></li>
+              <li><span>Mittwoch</span><span>05:30 – 18:00</span></li>
+              <li><span>Donnerstag</span><span>05:30 – 18:00</span></li>
+              <li><span>Freitag</span><span>05:30 – 18:00</span></li>
+              <li><span>Samstag</span><span>07:00 – 18:00</span></li>
+              <li><span>Sonntag</span><span>07:00 – 16:00</span></li>
+            </ul>
+          </article>
+          <article class="info reveal">
+            <h3>Gut zu wissen</h3>
+            <ul class="bullets">
+              <li>Rauchfrei</li>
+              <li>Kinderfreundlich</li>
+              <li>Vegetarisch-freundlich</li>
+              <li>Innenbereich <span class="amp">&amp;</span> Tresen</li>
+              <li>Keine Wartezeit</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final">
+      <div class="container final__wrap reveal">
+        <h2 class="display">Ein Freddo. Ein Käsekuchen.<br/>Ein guter Morgen.</h2>
+        <p class="body body--center">Plan deinen Besuch — oder komm einfach spontan vorbei.</p>
+        <div class="cta-row cta-row--center">
+          <a href="#visit" class="btn btn--primary btn--lg">
+            <span>Jetzt vorbeikommen</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="container foot__wrap">
+      <div class="foot__brand">
+        <a href="#top" class="foot__logo" aria-label="Bake and Brew Startseite">
+          <img src="logo.png" alt="Bake & Brew Logo" width="72" height="72" loading="lazy" decoding="async" />
+          <span>
+            <span class="brand__name">Bake <span class="amp">&amp;</span> Brew</span>
+            <span class="brand__sub">Established 2025 · Wiesbaden</span>
+          </span>
+        </a>
+        <p>Ein kleines Stück Griechenland in Wiesbaden-Biebrich. Specialty Coffee, frisches Gebäck und eine gute Tasse Zeit.</p>
+        <div class="foot__socials" aria-label="Soziale Netzwerke">
+          <a href="#" aria-label="Instagram" class="foot__social">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="foot__social">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 4h-2a3 3 0 0 0-3 3v3H8v3h2v8h3v-8h2.5l.5-3H13V7a1 1 0 0 1 1-1h1V4z" fill="currentColor"/></svg>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Bake+%26+Brew+Stettiner+Str.+10,+65203+Wiesbaden" target="_blank" rel="noopener" aria-label="Google Maps" class="foot__social">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot__col">
+        <h4>Entdecken</h4>
+        <ul>
+          <li><a href="#bestsellers">Bestseller</a></li>
+          <li><a href="#categories">Kategorien</a></li>
+          <li><a href="#menu">Karte</a></li>
+          <li><a href="#craft">Handwerk</a></li>
+        </ul>
+      </div>
+
+      <div class="foot__col">
+        <h4>Über uns</h4>
+        <ul>
+          <li><a href="#story">Unsere Geschichte</a></li>
+          <li><a href="#atmosphere">Atmosphäre</a></li>
+          <li><a href="#reviews">Bewertungen</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="foot__col">
+        <h4>Besuch</h4>
+        <address>
+          Stettiner Str. 10<br/>
+          65203 Wiesbaden · Biebrich
+        </address>
+        <ul class="foot__hours">
+          <li><span>Mo – Fr</span><span>05:30 – 18:00</span></li>
+          <li><span>Sa</span><span>07:00 – 18:00</span></li>
+          <li><span>So</span><span>07:00 – 16:00</span></li>
+        </ul>
+        <a class="foot__map" href="https://www.google.com/maps/search/?api=1&query=Stettiner+Str.+10,+65203+Wiesbaden" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 1 1 14 0c0 5.8-7 12-7 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>In Google Maps öffnen</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="foot__bottom">
+      <div class="container foot__bottom-wrap">
+        <span>© <span id="year"></span> Bake <span class="amp">&amp;</span> Brew · Alle Rechte vorbehalten.</span>
+        <span class="foot__legal">
+          <a href="#">Impressum</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">Datenschutz</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">AGB</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // loader dismiss
+    (function () {
+      const loader = document.getElementById('loader');
+      if (!loader) return;
+      const hide = () => {
+        loader.classList.add('is-hidden');
+        document.documentElement.classList.remove('is-loading');
+        setTimeout(() => loader.remove(), 800);
+      };
+      const minShown = 900;
+      const start = performance.now();
+      const finish = () => {
+        const wait = Math.max(0, minShown - (performance.now() - start));
+        setTimeout(hide, wait);
+      };
+      if (document.readyState === 'complete') finish();
+      else window.addEventListener('load', finish, { once: true });
+      // safety fallback
+      setTimeout(hide, 6000);
+    })();
+
+    // mobile nav
+    const t = document.querySelector('.nav__toggle');
+    const m = document.getElementById('mobileMenu');
+    t?.addEventListener('click', () => {
+      const open = t.getAttribute('aria-expanded') === 'true';
+      t.setAttribute('aria-expanded', String(!open));
+      if (open) { m.hidden = true; } else { m.hidden = false; }
+    });
+    m?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      t.setAttribute('aria-expanded','false'); m.hidden = true;
+    }));
+    // sticky nav shadow
+    const nav = document.getElementById('nav');
+    const onScroll = () => { nav.classList.toggle('is-scrolled', window.scrollY > 10); };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+    // reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // scroll-linked frame sequence (pin-scrub)
+    (function () {
+      const canvas = document.getElementById('menuCanvas');
+      const pin = document.getElementById('menuPin');
+      const bar = document.getElementById('menuPinBar');
+      if (!canvas || !pin) return;
+
+      const ctx = canvas.getContext('2d');
+      const FRAME_COUNT = 50;
+      const frames = [];
+      let currentIdx = -1;
+      let targetIdx = 0;
+      let rendering = false;
+      let progress = 0;
+      const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+
+      for (let i = 0; i < FRAME_COUNT; i++) {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = 'frames/f-' + String(i + 1).padStart(2, '0') + '.webp';
+        img.onload = () => {
+          if (i === 0) draw(0);
+          if (i === FRAME_COUNT - 1) update();
+        };
+        frames.push(img);
+      }
+
+      function draw(idx) {
+        const img = frames[idx];
+        if (!img || !img.complete || !img.naturalWidth) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        currentIdx = idx;
+      }
+
+      function update() {
+        const rect = pin.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const total = rect.height - vh;
+        if (total <= 0) return;
+        progress = Math.min(1, Math.max(0, -rect.top / total));
+        targetIdx = Math.min(FRAME_COUNT - 1, Math.round(progress * (FRAME_COUNT - 1)));
+        if (bar) {
+          if (isMobile) bar.style.width = (progress * 100) + '%';
+          else bar.style.height = (progress * 100) + '%';
+        }
+        if (!rendering) {
+          rendering = true;
+          requestAnimationFrame(render);
+        }
+      }
+
+      function render() {
+        if (currentIdx !== targetIdx) {
+          const step = targetIdx > currentIdx ? 1 : -1;
+          draw(currentIdx + step);
+          requestAnimationFrame(render);
+        } else {
+          rendering = false;
+        }
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+    })();
+  </script>
+</body>
+</html>
